@@ -1,0 +1,9 @@
+data/*
+
+# Vscode
+.vscode
+
+# Python
+.venv
+__pycache__/
+.env
