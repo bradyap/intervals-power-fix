@@ -44,11 +44,11 @@ def fix_activity(intervals: IntervalsAPI, activity_id: str):
     # Convert back to FIT
     subprocess.run(['java', '-jar', 'FitCSVTool.jar', '-c', csv_path, fit_path], stdout=subprocess.DEVNULL)
 
-    print(f"Deleting old activity {activity_id} from intervals")
-    intervals.delete_activity(activity_id)
-
     print("Putting new activity")
     intervals.put_activity(fit_path)
+
+    print(f"Deleting old activity {activity_id} from intervals")
+    intervals.delete_activity(activity_id)
 
     print("Done!")
 
